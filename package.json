@@ -1,0 +1,49 @@
+{
+  "name": "@todo/app",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@8.15.0",
+  "homepage": "https://github.com/andrescv/todo-app-starter#readme",
+  "description": "Simple Full-Stack TODO application",
+  "license": "MIT",
+  "author": "Andrés Castellanos <me@andrescv.dev> (https://github.com/andrescv)",
+  "keywords": [
+    "nextjs",
+    "reactjs",
+    "prisma",
+    "todo",
+    "fullstack"
+  ],
+  "workspaces": [
+    "app",
+    "packages/*"
+  ],
+  "engines": {
+    "npm": ">=8.0",
+    "node": ">=16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrescv/todo-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrescv/todo-app/issues"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "clean": "turbo run clean --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx}\""
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@todo/eslint-config": "*",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "turbo": "^1.4.3"
+  }
+}

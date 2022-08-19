@@ -1,0 +1,31 @@
+{
+  "name": "@app/todo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "clean": "rimraf .turbo .next"
+  },
+  "dependencies": {
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^12.2.5",
+    "@todo/eslint-config": "*",
+    "@todo/tsconfig": "*",
+    "@types/node": "^18.7.6",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.7.4"
+  }
+}
