@@ -1,0 +1,35 @@
+{
+  "name": "@todo/db",
+  "version": "0.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "prebuild": "prisma generate",
+    "build": "tsup",
+    "predev": "prisma generate",
+    "dev": "tsup --watch",
+    "generate": "prisma generate",
+    "seed": "prisma db seed",
+    "migrate": "prisma db push",
+    "format": "prisma format",
+    "lint": "eslint \"{src,prisma}/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"{src,prisma}/**/*.{ts,tsx}\" --fix",
+    "studio": "prisma studio",
+    "clean": "rimraf .turbo dist"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.2.1"
+  },
+  "devDependencies": {
+    "@todo/eslint-config": "*",
+    "@todo/tsconfig": "*",
+    "argon2": "^0.28.7",
+    "prisma": "^4.2.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "tsup": "^6.2.2"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
+}

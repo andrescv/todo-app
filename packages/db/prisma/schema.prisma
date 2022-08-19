@@ -1,0 +1,44 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model User {
+  /// User id
+  id        String   @id @default(cuid())
+  /// User full name.
+  fullName  String   @db.VarChar(255)
+  /// User email.
+  email     String   @unique @db.VarChar(255)
+  /// User password.
+  password  String
+  /// User created at.
+  createdAt DateTime @default(now())
+  /// User updated at.
+  updatedAt DateTime @updatedAt
+  /// User todos
+  todos     Todo[]
+}
+
+model Todo {
+  /// Todo id.
+  id         String   @id @default(cuid())
+  /// Todo value.
+  value      String
+  /// Todo is complete flag.
+  isComplete Boolean  @default(false)
+  /// Todo user id.
+  userId     String
+  /// Todo user relation.
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// Todo created at.
+  createdAt  DateTime @default(now())
+  /// Todo updated at.
+  updatedAt  DateTime @updatedAt
+}
